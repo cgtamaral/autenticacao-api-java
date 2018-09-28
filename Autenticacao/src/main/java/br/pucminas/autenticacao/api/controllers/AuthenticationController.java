@@ -10,13 +10,23 @@ import org.springframework.web.bind.annotation.RestController;
 import br.pucminas.autenticacao.api.Response;
 import br.pucminas.autenticacao.api.dtos.TokenDTO;
 import br.pucminas.autenticacao.api.dtos.UserAuthenticationDTO;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
 
 @RestController
 @RequestMapping("/v1/public")
 @CrossOrigin(origins = "*")
+
+@Api(value = "authentications", description = "Recurso para autenticação de usuários na Livraria Virtual", tags={ "authentications"})
 public class AuthenticationController {
 
-	@PostMapping("/authentications")
+    @ApiOperation(value = "Retorna um token para autentição de um usuário na Livraria Virtual", nickname = "generateToken", notes = "", tags={ "authentications"})
+    @ApiResponses(value = {@ApiResponse(code = 200, message = "Operação bem sucessida!"),
+    		  			   @ApiResponse(code = 400, message = "O objeto da requisição possui valores inválidos!"),
+    					   @ApiResponse(code = 404, message = "O usuário informado não foi encontrado!") })
+	@PostMapping(value = "/authentications", produces = "application/json")
 	public ResponseEntity<Response<TokenDTO>> generateToken(UserAuthenticationDTO userAuthenticationDTO,
 			BindingResult result)
 	{
