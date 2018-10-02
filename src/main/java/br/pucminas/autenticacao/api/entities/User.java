@@ -1,5 +1,6 @@
 package br.pucminas.autenticacao.api.entities;
 
+import java.io.Serializable;
 import java.util.Calendar;
 
 import javax.persistence.Column;
@@ -14,8 +15,13 @@ import br.pucminas.autenticacao.api.enums.UserProfileEnum;
 
 
 @Entity
-public class User
+public class User implements Serializable 
 {	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 6236524704040105223L;
+	
 	private Long id;
 	private String name;
 	private String email;
