@@ -86,7 +86,7 @@ public class User
 		this.active = active;
 	}
 	
-	@Column(name = "creationDate", nullable = false)
+	@Column(name = "CREATIONDATE", nullable = false)
 	public Calendar getCreationDate() {
 		return creationDate;
 	}
