@@ -9,7 +9,7 @@
 	<packaging>jar</packaging>
 
 	<name>Autenticacao</name>
-	<description>Demo project for Spring Boot</description>
+	<description>API de acesso aos recursos de autenticação da Livraria Virtual</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
