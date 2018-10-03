@@ -74,7 +74,7 @@ public class AuthenticationController {
 		if(!user.get().getPassword().equals(userAuthenticationDTO.getPassword()))
 		{
 			log.error( "A combinação de usuário/senha está incorreta para o usuário: {}" , userAuthenticationDTO.getEmail());
-			response.getErrors().add("\"A combinação de usuário/senha está incorreta para o usuário!");
+			response.getErrors().add("A combinação de usuário e senha está incorreta para o usuário!");
 			
 			return ResponseEntity.status(HttpStatus.FORBIDDEN).body(response);
 		}

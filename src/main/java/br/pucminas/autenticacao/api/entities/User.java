@@ -10,11 +10,13 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 import br.pucminas.autenticacao.api.enums.UserProfileEnum;
 
 
 @Entity
+@Table(name = "usuario")
 public class User implements Serializable 
 {	
 	/**
@@ -92,7 +94,7 @@ public class User implements Serializable
 		this.active = active;
 	}
 	
-	@Column(name = "CREATIONDATE", nullable = false)
+	@Column(name = "creationdate", nullable = false)
 	public Calendar getCreationDate() {
 		return creationDate;
 	}
