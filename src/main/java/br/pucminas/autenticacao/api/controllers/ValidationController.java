@@ -31,7 +31,7 @@ import io.swagger.annotations.ApiResponses;
 @RequestMapping("/v1/public")
 @CrossOrigin(origins = "*")
 
-@Api(value = "validations", description = "Recurso para validação de Tokens de usuários das Livraria Virtual", tags={ "validations"})
+@Api(value = "validations", description = "Recurso para validação de Tokens de usuários da Livraria Virtual", tags={ "validations"})
 public class ValidationController {
 	
 	private static final Logger log = LoggerFactory.getLogger(ValidationController.class);
